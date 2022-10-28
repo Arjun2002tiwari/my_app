@@ -52,7 +52,7 @@ class InitState extends State<Splash> {
               Padding(
                 padding: EdgeInsets.all(40),
                 child: Text(
-                  'RAKSHAK',
+                  'RAKSHAQ',
                   style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
