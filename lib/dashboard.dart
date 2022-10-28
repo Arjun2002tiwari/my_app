@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/police.dart';
 
 class Dash extends StatefulWidget {
   @override
@@ -26,7 +27,12 @@ class InitState extends State<Dash> {
                 Card(
                     margin: EdgeInsets.all(8.0),
                     child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Police()));
+                        },
                         splashColor: Colors.orange,
                         child: Center(
                             child: Column(
