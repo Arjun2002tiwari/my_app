@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/emergency.dart';
 
@@ -89,6 +90,10 @@ class InitState extends State<Dash> {
                       ))))
             ],
           )),
+      bottomNavigationBar: CurvedNavigationBar(
+        items: [Icon(Icons.sos), Icon(Icons.safety_check), Icon(Icons.rule)],
+        backgroundColor: Color(0xFFE66216),
+      ),
     );
   }
 }
