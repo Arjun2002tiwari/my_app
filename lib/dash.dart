@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/emergency.dart';
+
+import 'Location.dart';
 
 class Dash extends StatefulWidget {
   @override
@@ -20,14 +24,73 @@ class InitState extends State<Dash> {
           "RAKSHAQ",
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Color(0xFFE66216),
+        backgroundColor: Colors.grey,
+        centerTitle: true,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end:Alignment.bottomCenter,
+            colors:[
+              Colors.pink,
+              Colors.orange,
+            ],
+            ),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(""),
+                backgroundColor:Colors.grey,
+              ),
+              accountName: Text("arjun"),
+              accountEmail: Text("arjuntiwari754@gmail.com"),
+            ),
+            ListTile(
+              title:Text("Profile"),
+              trailing: Icon(Icons.person),
+              // onTap: (){
+                
+              // },
+            ),
+            ListTile(
+              title: Text("About"),
+              trailing: Icon(Icons.home),
+              // onTap: (){
+              //   Navigator.pop(context);
+              // },
+            ),
+            ListTile(
+              title: Text("Log Out"),
+              trailing: Icon(Icons.logout_outlined,color:Colors.grey),
+              // onTap: (){
+              //   setState(() {
+              //     sort=!sort;
+              //   });
+              //},
+            ),
+          ],
+        ),
       ),
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end:Alignment.bottomCenter,
+            colors:[
+              Colors.pink,
+              Colors.orange,
+            ],
+            ),
+        ),
           padding: EdgeInsets.all(30.0),
           child: GridView.count(
             crossAxisCount: 2,
             children: <Widget>[
               Card(
+                color:Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {},
@@ -42,6 +105,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
+                color:Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {},
@@ -56,9 +120,13 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
+                color:Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Location()));
+                      },
                       splashColor: Colors.orange,
                       child: Center(
                           child: Column(
@@ -70,6 +138,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
+                color:Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {
@@ -93,7 +162,11 @@ class InitState extends State<Dash> {
       bottomNavigationBar: CurvedNavigationBar(
         items: [Icon(Icons.sos), Icon(Icons.safety_check), Icon(Icons.rule)],
         backgroundColor: Color(0xFFE66216),
+        color:Colors.grey.withOpacity(0.9)
       ),
     );
   }
 }
+
+
+
