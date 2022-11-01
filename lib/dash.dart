@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:my_app/emergency.dart';
 
 import 'Location.dart';
@@ -33,26 +32,26 @@ class InitState extends State<Dash> {
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end:Alignment.bottomCenter,
-            colors:[
-              Colors.pink,
-              Colors.orange,
-            ],
-            ),
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.pink,
+                    Colors.orange,
+                  ],
+                ),
               ),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: NetworkImage(""),
-                backgroundColor:Colors.grey,
+                backgroundColor: Colors.grey,
               ),
-              accountName: Text("arjun"),
-              accountEmail: Text("arjuntiwari754@gmail.com"),
+              accountName: Text("Nandini Dadwal"),
+              accountEmail: Text("nandinidadwal321@gmail.com"),
             ),
             ListTile(
-              title:Text("Profile"),
+              title: Text("Profile"),
               trailing: Icon(Icons.person),
               // onTap: (){
-                
+
               // },
             ),
             ListTile(
@@ -64,7 +63,7 @@ class InitState extends State<Dash> {
             ),
             ListTile(
               title: Text("Log Out"),
-              trailing: Icon(Icons.logout_outlined,color:Colors.grey),
+              trailing: Icon(Icons.logout_outlined, color: Colors.grey),
               // onTap: (){
               //   setState(() {
               //     sort=!sort;
@@ -75,25 +74,26 @@ class InitState extends State<Dash> {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end:Alignment.bottomCenter,
-            colors:[
-              Colors.pink,
-              Colors.orange,
-            ],
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.pink,
+                Colors.orange,
+              ],
             ),
-        ),
+          ),
           padding: EdgeInsets.all(30.0),
           child: GridView.count(
             crossAxisCount: 2,
             children: <Widget>[
               Card(
-                color:Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                      onTap: () {},
+                      onTap: () async =>
+                          {await FlutterPhoneDirectCaller.callNumber("1091")},
                       splashColor: Colors.orange,
                       child: Center(
                           child: Column(
@@ -105,7 +105,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
-                color:Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {},
@@ -120,12 +120,14 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
-                color:Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {
-                        Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => Location()));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Location()));
                       },
                       splashColor: Colors.orange,
                       child: Center(
@@ -138,7 +140,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
-                color:Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.5),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {
@@ -160,13 +162,9 @@ class InitState extends State<Dash> {
             ],
           )),
       bottomNavigationBar: CurvedNavigationBar(
-        items: [Icon(Icons.sos), Icon(Icons.safety_check), Icon(Icons.rule)],
-        backgroundColor: Color(0xFFE66216),
-        color:Colors.grey.withOpacity(0.9)
-      ),
+          items: [Icon(Icons.sos), Icon(Icons.safety_check), Icon(Icons.rule)],
+          backgroundColor: Color(0xFFE66216),
+          color: Colors.grey.withOpacity(0.9)),
     );
   }
 }
-
-
-
