@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:my_app/emergency.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 import 'Location.dart';
 
@@ -35,8 +37,8 @@ class InitState extends State<Dash> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.pink,
-                    Colors.orange,
+                    Color(0xFFC8479D),
+                    Color(0XFFE8884C),
                   ],
                 ),
               ),
@@ -44,8 +46,8 @@ class InitState extends State<Dash> {
                 backgroundImage: NetworkImage(""),
                 backgroundColor: Colors.grey,
               ),
-              accountName: Text("Nandini Dadwal"),
-              accountEmail: Text("nandinidadwal321@gmail.com"),
+              accountName: Text("arjun"),
+              accountEmail: Text("arjuntiwari754@gmail.com"),
             ),
             ListTile(
               title: Text("Profile"),
@@ -79,8 +81,8 @@ class InitState extends State<Dash> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.pink,
-                Colors.orange,
+                Color(0xFFC8479D),
+                Color(0XFFE8884C),
               ],
             ),
           ),
@@ -89,11 +91,12 @@ class InitState extends State<Dash> {
             crossAxisCount: 2,
             children: <Widget>[
               Card(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.7),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                      onTap: () async =>
-                          {await FlutterPhoneDirectCaller.callNumber("1091")},
+                      onTap: () async {
+                        await FlutterPhoneDirectCaller.callNumber("100");
+                      },
                       splashColor: Colors.orange,
                       child: Center(
                           child: Column(
@@ -105,7 +108,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.7),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {},
@@ -120,7 +123,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.7),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {
@@ -140,7 +143,7 @@ class InitState extends State<Dash> {
                         ],
                       )))),
               Card(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.7),
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
                       onTap: () {
